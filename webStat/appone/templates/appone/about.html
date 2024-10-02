@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lhenie</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --accent-color: #1abc9c;
+        }
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            font-family: 'Inter', sans-serif;
+        }
+        .navbar {
+            background-color: var(--dark-color);
+            padding: 1rem;
+        }
+        .navbar-brand, .nav-link {
+            color: var(--light-color) !important;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        .btn-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .card-body p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">lhenie.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'portfolio' %}">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'services' %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'testimonials' %}">Testimonials</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="text-center mb-5">About Our Portfolio Management</h1>
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4">
+                <img src="{% static 'img/item1.jpg' %}" alt="Portfolio Management" class="img-fluid rounded shadow-sm">
+            </div>
+            <div class="col-md-6 mb-4">
+                <h2>Our Mission</h2>
+                <p>At Portfolio Management, our mission is to empower individuals and businesses to achieve their financial goals through expert guidance and innovative investment strategies. We believe in transparency, integrity, and personalized service to help our clients navigate the complex world of finance.</p>
+                <p>With years of experience and a team of dedicated professionals, we strive to deliver exceptional results and build lasting relationships with our clients.</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">Expertise</div>
+                    <div class="card-body">
+                        <p>Our team of financial experts brings years of experience and in-depth knowledge to help you make informed investment decisions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">Personalization</div>
+                    <div class="card-body">
+                        <p>We offer tailored portfolio management solutions to meet your specific needs and goals. Your financial journey is personal to us.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">Innovation</div>
+                    <div class="card-body">
+                        <p>We leverage cutting-edge technology and research to stay ahead of market trends and provide you with the best investment opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'contact' %}" class="btn btn-custom">Get in Touch</a>
+        </div>
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2024 lhenie. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

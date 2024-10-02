@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lhenie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --accent-color: #1abc9c;
+        }
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            font-family: 'Inter', sans-serif;
+        }
+        .navbar {
+            background-color: var(--dark-color);
+            padding: 1rem;
+        }
+        .navbar-brand, .nav-link {
+            color: var(--light-color) !important;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        .btn-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        p, li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .form-control {
+            border-radius: 10px;
+            border: 1px solid var(--primary-color);
+        }
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--accent-color);
+        }
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">lhenie.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'portfolio' %}">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'services' %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'testimonials' %}">Testimonials</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="text-center mb-5">Contact Us</h1>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h2>Get in Touch</h2>
+                <p>Have questions about our portfolio management services? We're here to help. Fill out the form, and we'll get back to you as soon as possible.</p>
+                <ul class="list-unstyled">
+                    <li><strong>Email:</strong> lhenie@portfoliomanagement.com</li>
+                    <li><strong>Phone:</strong> 09123456781</li>
+                    <li><strong>Address:</strong> Masipit, Calapan City</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2024 lhenie. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

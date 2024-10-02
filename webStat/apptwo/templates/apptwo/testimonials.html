@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lhenie</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --accent-color: #1abc9c;
+        }
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .navbar {
+            background-color: var(--dark-color);
+            padding: 1rem;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: var(--light-color) !important;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+
+        .btn-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--dark-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+            transform: translateY(-3px);
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+        .card-body ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card-body ul li {
+            margin-bottom: 0.5rem;
+        }
+        .card-footer a {
+            font-weight: 600;
+        }
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+        }
+        footer p {
+            margin: 0;
+        }
+        .testimonial-img {
+            width: 100px; 
+            height: 100px; 
+            object-fit: cover; 
+            border-radius: 50%;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .card-body p, .card-body ul {
+                font-size: 1rem;
+            }
+            .btn-custom {
+                padding: 0.7rem 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">lhenie.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'portfolio' %}">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'services' %}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'testimonials' %}">Testimonials</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="container my-5">
+        <h1 class="text-center mb-4">Client Testimonials</h1>
+        <p class="text-center mb-5">Don't just take our word for it. Here's what our clients have to say about our portfolio management services.</p>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="{% static 'img/item2.jpg' %}" alt="John Doe" class="testimonial-img me-3">
+                            <div>
+                                <h3 class="card-title mb-0">Yang Jungwon</h3>
+                                <p class="text-muted">CEO, Tech Innovations Inc.</p>
+                            </div>
+                        </div>
+                        <div class="quote-icon mb-2">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <p class="card-text">The team at Portfolio Management has been instrumental in helping me achieve my financial goals. Their expertise and personalized approach have given me peace of mind knowing my investments are in good hands.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="{% static 'img/item3.jpg' %}" alt="Jane Smith" class="testimonial-img me-3">
+                            <div>
+                                <h3 class="card-title mb-0">Jake Sim</h3>
+                                <p class="text-muted">Retired Teacher</p>
+                            </div>
+                        </div>
+                        <div class="quote-icon mb-2">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <p class="card-text">I was worried about my retirement savings, but the Portfolio Management team put my fears to rest. Their retirement planning services have set me up for a comfortable and secure future.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="{% static 'img/item4.jpg' %}" alt="Michael Johnson" class="testimonial-img me-3">
+                            <div>
+                                <h3 class="card-title mb-0">Lee Heeseung</h3>
+                                <p class="text-muted">Small Business Owner</p>
+                            </div>
+                        </div>
+                        <div class="quote-icon mb-2">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <p class="card-text">As a business owner, I needed a portfolio management service that understood my unique financial situation. This team has exceeded my expectations, providing tailored strategies that have helped my business and personal finances thrive.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="{% static 'img/item5.jpg' %}" alt="Sarah Lee" class="testimonial-img me-3">
+                            <div>
+                                <h3 class="card-title mb-0">Kim Sunoo</h3>
+                                <p class="text-muted">Marketing Director</p>
+                            </div>
+                        </div>
+                        <div class="quote-icon mb-2">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <p class="card-text">I've been impressed by the level of communication and transparency from the Portfolio Management team. They keep me informed and involved in my investment decisions, which gives me confidence in my financial future.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <p>Ready to join our satisfied clients?</p>
+            <a href="{% url 'contact' %}" class="btn btn-custom btn-lg">Get Started Today</a>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-center text-light py-3 mt-5">
+        <p>&copy; 2024 lhenie. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
